@@ -43,7 +43,7 @@ class TweetAUTH():
         for follow in following:
              for tweet in tweepy.Cursor(api.user_timeline, id=follow, include_entities=True, include_rts=False).items(1):
                  for url in tweet.entities['urls']:
-                     if 'twitter' in url['expanded_url']:
+                     if 'spaces' in url['expanded_url']:
                          tweet_list.append((tweet.user.screen_name, url['expanded_url']))
         return tweet_list
         
